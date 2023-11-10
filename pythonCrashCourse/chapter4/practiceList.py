@@ -28,3 +28,12 @@ print(list4)
 print('---------------')
 list5 = [value ** 3 for value in range(1, 10)]
 print(list5)
+print('The first three item in the list are :', list5[0:3])
+print(len(list5)//2-1)
+print(len(list5)//2+1)
+print('Three item from the middle of the list are :', list5[(len(list5)//2):(len(list5)//2+3)])
+print('The last three item from the list are :', list5[len(list5) - 3 : ])
+print('---------------')
+
+my_t = (3,)
+print(my_t[0])
