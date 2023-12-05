@@ -31,6 +31,7 @@ class AlienInvasion:
             self._check_events()
             self.ship.update()
             self._update_bullets()
+            self._update_aliens()
 
             # 更新屏幕上的图像，并切换到新屏幕
             self._update_screen()
@@ -118,6 +119,23 @@ class AlienInvasion:
             new_bullet = Bullet(self)
             self.bullets.add(new_bullet)    
 
+    def _update_aliens(self):
+        '''检查外星人是否位于屏幕边缘，并更新外星人群中所有外星人的位置'''
+        self._check_fleet_edges()
+        self.aliens.update()
+
+    def _check_fleet_edges(self):
+        '''有外星人到达边缘时，将外星人群向另一边移动'''
+        for alien in self.aliens.sprites():
+            if alien.check_edges():
+                self._change_fleet_direction()
+                break
+
+    def _change_fleet_direction(self):
+        '''将外星人群向下移动，并改变他们的方向'''
+        for alien in self.aliens.sprites():
+            alien.rect.y += self.settings.fleet_drop_speed        
+        self.settings.fleet_direction *= -1
 
 if __name__ == '__main__':
     # 创建游戏实例并运行游戏
