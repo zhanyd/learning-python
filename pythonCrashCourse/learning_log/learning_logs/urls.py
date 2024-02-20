@@ -11,7 +11,7 @@ urlpatterns = [
     # 显示主题的详细信息
     path('topics/<int:topic_id>/', views.topic, name='topic'),
     # 添加新主题
-    #path('new_topic/', views.new_topic, name='new_topic'),
+    path('new_topic/', views.new_topic, name='new_topic'),
     # 添加新条目
-    #path('new_entry/<int:topic_id>/', views.new_entry, name='new_entry'),
+    path('new_entry/<int:topic_id>/', views.new_entry, name='new_entry'),
 ]
