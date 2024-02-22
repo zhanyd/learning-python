@@ -129,3 +129,5 @@ dmypy.json
 .pyre/
 
 pythonCrashCourse/learning_log/ll_env/
+
+.DS_Store
